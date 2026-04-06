@@ -1,0 +1,250 @@
+body {
+    font-family: "Ubuntu", sans-serif;
+    background-color: hsl(218, 100%, 97%);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.card-form {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding: 15px 16px;
+    border-radius: 15px;
+    background-color: #fff;
+
+    width: 945px;
+    height: 63%;
+}
+
+.sidebar {
+    background: url(../assets/images/bg-sidebar-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+    border-radius: 10px;
+    height: 100%;
+}
+
+.steps {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+ 
+    padding: 35px;
+    margin-right: 55px;
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+
+    border: 1px solid white;
+    color: white;
+    background-color: transparent;
+
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.number-selected {
+    border: transparent;
+    background-color: #bee2fa;
+    color: hsl(213, 96%, 18%);
+}
+
+a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 10px;
+    gap: 5px;
+
+    color: #fff;
+    text-transform: uppercase;
+}
+
+a .step-subtitle {
+    font-size: 12px;
+    font-weight: 100;
+}
+
+a .step-title {
+    font-weight: 500;
+}
+
+.forms {
+    display: flex;
+    height: 100%;
+}
+
+.form {
+    display: none;
+    padding: 40px 50px;
+    height: 100%;
+}
+
+.ativo {
+    display: block;
+}
+
+.form .personal-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    
+    gap: 40px;
+}
+
+.personal-info .header h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: hsl(213, 96%, 18%);
+    margin-bottom: 12px;
+}
+
+.personal-info .header p {
+    font-size: 16px;
+    font-weight: 400;
+    color: hsl(231, 11%, 63%);
+}
+
+.personal-info .infos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+    width: 100%;
+}
+
+
+.personal-info .infos .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.form-group .label-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+.personal-info .infos label {
+    font-size: 14px;
+    font-weight: 400;
+    color: hsl(213, 96%, 18%);
+}
+
+.error-message {
+    font-size: 14px;
+    font-weight: 700;
+    color: hsl(354, 84%, 57%);
+    display: none;
+}
+
+.form-group.error .error-message {
+    display: block;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #d6d9e6;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: inherit;
+    background-color: #fff;
+    color: hsl(213, 96%, 18%);
+    transition: border-color 0.2s;
+}
+
+.form-group input::placeholder {
+    color: hsl(231, 11%, 63%);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #483eff;
+}
+
+.form-group.error input {
+    border-color: hsl(354, 84%, 57%);
+}
+
+.btn-next,
+.btn-back,
+.btn-confirm {
+    padding: 15px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-family: inherit;
+}
+
+.btn-next {
+    margin-top: 45px;
+}
+
+.btn-next,
+.btn-confirm {
+    background-color: hsl(213, 96%, 18%);
+    color: white;
+}
+
+.btn-next:hover,
+.btn-confirm:hover {
+    background-color: hsl(243, 100%, 62%);
+}
+
+.btn-back {
+    background-color: transparent;
+    color: hsl(231, 11%, 63%);
+}
+
+.btn-back:hover {
+    color: hsl(243, 100%, 62%);
+}
+
+.personal-info {
+    width: 100%;
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+fieldset button {
+    align-self: flex-end;
+}
+
