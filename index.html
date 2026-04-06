@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Multi-step form</title>
+
+  <link rel="stylesheet" href="./src/css/reset.css">
+  <link rel="stylesheet" href="./src/css/style.css">
+  <link rel="stylesheet" href="./src/css/responsive.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+    rel="stylesheet">
+
+
+  <style>
+    input[type="radio"] {
+      display: none;
+    }
+
+    .card input:checked+.card-content {
+      border: 2px solid #483eff;
+      background-color: #f0f3ff;
+    }
+
+    label.btn-toggle input[type="checkbox"] {
+      appearance: none;
+      width: 40px;
+      height: 20px;
+      background: #ccc;
+      border-radius: 20px;
+      position: relative;
+      cursor: pointer;
+    }
+
+    label.btn-toggle input[type="checkbox"]::before {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      background: white;
+      border-radius: 50%;
+      top: 2px;
+      left: 2px;
+      transition: 0.2s;
+    }
+
+    label.btn-toggle input[type="checkbox"]:checked {
+      background: #02295a;
+    }
+
+    label.btn-toggle input[type="checkbox"]:checked::before {
+      transform: translateX(20px);
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <main class="container">
+
+    <div class="card-form">
+      <!-- Sidebar start -->
+
+      <aside class="sidebar">
+        <nav class="menu">
+          <ul class="steps">
+
+            <li class="item step1">
+              <span class="step-number number-selected">1</span>
+              <a href="#">
+                <span class="step-subtitle">Step 1</span>
+                <span class="step-title"><strong>Your info</strong></span>
+              </a>
+            </li>
+
+            <li class="item step2">
+              <span class="step-number">2</span>
+              <a href="#">
+                <span class="step-subtitle">Step 2</span>
+                <span class="step-title"><strong>Select plan</strong></span>
+              </a>
+            </li>
+
+            <li class="item step3">
+              <span class="step-number">3</span>
+              <a href="#">
+                <span class="step-subtitle">Step 3</span>
+                <span class="step-title"><strong>Add-ons</strong></span>
+              </a>
+            </li>
+
+            <li class="item step4">
+              <span class="step-number">4</span>
+              <a href="#">
+                <span class="step-subtitle">Step 4</span>
+                <span class="step-title"><strong>Summary</strong></span>
+              </a>
+            </li>
+
+          </ul>
+        </nav>
+      </aside>
+      <!-- Sidebar end -->
+
+
+      <div class="forms">
+        <!-- Step1 start -->
+        <form class="form">
+          <fieldset class="personal-info">
+
+            <div class="header">
+              <h2>Personal info</h2>
+              <p>Please provide your name, email address, and phone number.</p>
+            </div>
+
+            <div class="infos"> 
+              <div class="form-group">
+                <div class="label-row">
+                  <label for="name">Name</label>
+                  <span class="error-message">This field is required</span>
+                </div>
+                <input type="text" name="name" id="name" placeholder="e.g. Stephen King" required>
+              </div>
+
+              <div class="form-group">
+                <div class="label-row">
+                  <label for="email">Email Address</label>
+                  <span class="error-message">This field is required</span>
+                </div>
+                <input type="email" name="email" id="email" placeholder="e.g. stephenking@lorem.com" required>
+              </div>
+
+              <div class="form-group">
+                <div class="label-row">
+                  <label for="tel">Phone Number</label>
+                  <span class="error-message">This field is required</span>
+                </div>
+                <input type="tel" inputmode="numeric" name="phone" id="phone" placeholder="e.g. +1 234 567 890"
+                  required>
+              </div>
+            </div>
+            
+            <button type="submit" class="btn-next">Next Step</button>
+          </fieldset>
+        </form>
+        <!-- Step1 end -->
+
+        <!-- Step2 start -->
+        <form class="form ativo">
+          <fieldset>
+            <h2>Select your plan</h2>
+
+            <label class="card">
+              <input type="radio" name="plan" value="arcade" checked>
+              <div class="card-content">
+                <img src="./src/assets/images/icon-arcade.svg" alt="Icone Arcade">
+                <span>Arcade</span>
+                <p>$9/mo</p>
+              </div>
+            </label>
+
+            <label class="card">
+              <input type="radio" name="plan" value="advanced">
+              <div class="card-content">
+                <img src="./src/assets/images/icon-advanced.svg" alt="Icone Advanced">
+                <span>Advanced</span>
+                <p>$12/mo</p>
+              </div>
+            </label>
+
+            <label class="card">
+              <input type="radio" name="plan" value="pro">
+              <div class="card-content">
+                <img src="./src/assets/images/icon-pro.svg" alt="Icone Pro">
+                <span>Pro</span>
+                <p>$15/mo</p>
+              </div>
+            </label>
+
+            <label class="btn-toggle">
+              <span>Monthly</span>
+              <input type="checkbox" name="billing">
+              <span>Yearly</span>
+            </label>
+
+            <button type="submit" class="btn-back">Go back</button>
+            <button type="submit" class="btn-next">Next step</button>
+
+          </fieldset>
+        </form>
+        <!-- Step2 end -->
+
+        <!-- Step3 start -->
+        <form class="form">
+          <fieldset>
+            <h2>Pick add-ons</h2>
+            <p>Add-ons help enhance your gaming experience.</p>
+
+            <label class="addon-card">
+              <input type="checkbox" name="addons" value="online-service">
+
+              <div class="addon-content">
+                <div>
+                  <span class="addon-title">Online service</span>
+                  <p class="addon-desc">Access to multiplayer games</p>
+                </div>
+
+                <span class="addon-price">+$1/mo</span>
+              </div>
+            </label>
+
+            <!-- Add-on 2 -->
+            <label class="addon-card">
+              <input type="checkbox" name="addons" value="storage">
+
+              <div class="addon-content">
+                <div>
+                  <span class="addon-title">Larger storage</span>
+                  <p class="addon-desc">Extra 1TB of cloud save</p>
+                </div>
+
+                <span class="addon-price">+$2/mo</span>
+              </div>
+            </label>
+
+            <!-- Add-on 3 -->
+            <label class="addon-card">
+              <input type="checkbox" name="addons" value="profile">
+
+              <div class="addon-content">
+                <div>
+                  <span class="addon-title">Customizable profile</span>
+                  <p class="addon-desc">Custom theme on your profile</p>
+                </div>
+
+                <span class="addon-price">+$2/mo</span>
+              </div>
+            </label>
+
+            <button type="submit" class="btn-back">Go back</button>
+            <button type="submit" class="btn-next">Next step</button>
+
+          </fieldset>
+        </form>
+        <!-- Step3 end -->
+
+        <!-- Step4 start -->
+        <form class="form summary">
+
+          <h2>Finishing up</h2>
+          <p>Double-check everything looks OK before confirming.</p>
+
+          <div class="summary-box">
+
+            <!-- Plano -->
+            <div class="summary-plan">
+              <div>
+                <strong>Arcade (Monthly)</strong>
+                <a href="#">Change</a>
+              </div>
+
+              <span class="price">$9/mo</span>
+            </div>
+
+            <hr>
+
+            <!-- Add-ons -->
+            <div class="summary-addons">
+              <div class="addon">
+                <span>Online service</span>
+                <span>+$1/mo</span>
+              </div>
+
+              <div class="addon">
+                <span>Larger storage</span>
+                <span>+$2/mo</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Total -->
+          <div class="summary-total">
+            <span>Total (per month)</span>
+            <strong>+$12/mo</strong>
+          </div>
+
+          <button class="btn-back">Go Back</button>
+          <button class="btn-confirm">Confirm</button>
+
+        </form>
+        <!-- Step4 end -->
+
+      </div>
+    </div>
+
+  </main>
+
+  <script src="./src/js/script.js"></script>
+
+</body>
+
+</html>
