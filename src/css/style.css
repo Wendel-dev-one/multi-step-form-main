@@ -7,21 +7,22 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
     max-width: 1440px;
     margin: 0 auto;
 }
 
 .card-form {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     gap: 50px;
     padding: 15px 16px;
     border-radius: 15px;
     background-color: #fff;
 
-    width: 945px;
-    height: 63%;
+    width: 100%;
+    max-width: 945px;
+    min-height: 600px;
 }
 
 .sidebar {
@@ -29,8 +30,10 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left;
-    border-radius: 10px;
-    height: 100%;
+
+    width: 274px;
+    border-radius: 8px;
+    min-height: 100%;
 }
 
 .steps {
@@ -38,8 +41,8 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 30px;
- 
+    gap: 25px;
+
     padding: 35px;
     margin-right: 55px;
 }
@@ -91,22 +94,26 @@ a .step-subtitle {
 }
 
 a .step-title {
+    font-size: 14px;
     font-weight: 500;
 }
 
+/* STEP 1 */
+
 .forms {
     display: flex;
-    height: 100%;
+    flex: 1;
+    min-height: 0;
 }
 
 .form {
     display: none;
-    padding: 40px 50px;
-    height: 100%;
+    padding: 40px 50px 0;
+    flex: 1;
 }
 
 .ativo {
-    display: block;
+    display: flex;
 }
 
 .form .personal-info {
@@ -114,21 +121,25 @@ a .step-title {
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    
+
     gap: 40px;
 }
 
-.personal-info .header h2 {
+.header h2 {
     font-size: 32px;
     font-weight: 700;
     color: hsl(213, 96%, 18%);
     margin-bottom: 12px;
 }
 
-.personal-info .header p {
+.header p {
     font-size: 16px;
     font-weight: 400;
     color: hsl(231, 11%, 63%);
+}
+
+.personal-info {
+    width: 95%;
 }
 
 .personal-info .infos {
@@ -207,9 +218,9 @@ a .step-title {
     font-family: inherit;
 }
 
-.btn-next {
+/* .btn-next {
     margin-top: 45px;
-}
+} */
 
 .btn-next,
 .btn-confirm {
@@ -231,9 +242,7 @@ a .step-title {
     color: hsl(243, 100%, 62%);
 }
 
-.personal-info {
-    width: 100%;
-}
+
 
 fieldset {
     border: none;
@@ -248,3 +257,113 @@ fieldset button {
     align-self: flex-end;
 }
 
+/* STEP 2 */
+
+.plans {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 15px;
+}
+
+
+.plans .card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    width: 140px;
+    height: 162px;
+    gap: 20px;
+
+    border: 1px solid hsl(231, 11%, 63%);
+    border-radius: 8px;
+    padding: 15px 15px;
+    cursor: pointer;
+}
+
+.plan-price {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 5px;
+}
+
+.plan-price p {
+    font-size: 1rem;
+    font-weight: 600;
+    color: hsl(213, 96%, 18%);
+}
+
+.plan-price span {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color:hsl(231, 11%, 63%);
+}
+
+
+
+
+input[type="radio"] {
+    display: none;
+}
+
+.card input:checked+.card-content {
+    border: 2px solid #483eff;
+    background-color: #f0f3ff;
+}
+
+label.btn-toggle {
+    padding: 15px;
+    background-color: #f0f3ff;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+label.btn-toggle span {
+    font-size: 1rem;
+    font-weight: 500;
+    color: hsl(231, 11%, 63%);
+}
+
+label.btn-toggle input[type="checkbox"] {
+    appearance: none;
+    width: 40px;
+    height: 20px;
+    background: #02295a;
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+label.btn-toggle input[type="checkbox"]::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: white;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: 0.2s;
+}
+
+label.btn-toggle input[type="checkbox"]:checked {
+    background: #02295a;
+}
+
+label.btn-toggle input[type="checkbox"]:checked::before {
+    transform: translateX(20px);
+}
+
+.btns {
+    display: flex;
+    justify-content: space-between;
+   
+    padding-top: 65px;
+}

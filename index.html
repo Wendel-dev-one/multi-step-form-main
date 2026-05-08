@@ -20,48 +20,6 @@
     href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
     rel="stylesheet">
 
-
-  <style>
-    input[type="radio"] {
-      display: none;
-    }
-
-    .card input:checked+.card-content {
-      border: 2px solid #483eff;
-      background-color: #f0f3ff;
-    }
-
-    label.btn-toggle input[type="checkbox"] {
-      appearance: none;
-      width: 40px;
-      height: 20px;
-      background: #ccc;
-      border-radius: 20px;
-      position: relative;
-      cursor: pointer;
-    }
-
-    label.btn-toggle input[type="checkbox"]::before {
-      content: "";
-      position: absolute;
-      width: 16px;
-      height: 16px;
-      background: white;
-      border-radius: 50%;
-      top: 2px;
-      left: 2px;
-      transition: 0.2s;
-    }
-
-    label.btn-toggle input[type="checkbox"]:checked {
-      background: #02295a;
-    }
-
-    label.btn-toggle input[type="checkbox"]:checked::before {
-      transform: translateX(20px);
-    }
-  </style>
-
 </head>
 
 <body>
@@ -76,7 +34,7 @@
           <ul class="steps">
 
             <li class="item step1">
-              <span class="step-number number-selected">1</span>
+              <span class="step-number ">1</span>
               <a href="#">
                 <span class="step-subtitle">Step 1</span>
                 <span class="step-title"><strong>Your info</strong></span>
@@ -84,7 +42,7 @@
             </li>
 
             <li class="item step2">
-              <span class="step-number">2</span>
+              <span class="step-number number-selected">2</span>
               <a href="#">
                 <span class="step-subtitle">Step 2</span>
                 <span class="step-title"><strong>Select plan</strong></span>
@@ -123,7 +81,7 @@
               <p>Please provide your name, email address, and phone number.</p>
             </div>
 
-            <div class="infos"> 
+            <div class="infos">
               <div class="form-group">
                 <div class="label-row">
                   <label for="name">Name</label>
@@ -149,43 +107,56 @@
                   required>
               </div>
             </div>
-            
+
             <button type="submit" class="btn-next">Next Step</button>
           </fieldset>
         </form>
         <!-- Step1 end -->
 
         <!-- Step2 start -->
-        <form class="form ativo">
+        <form class="form ">
           <fieldset>
-            <h2>Select your plan</h2>
 
-            <label class="card">
-              <input type="radio" name="plan" value="arcade" checked>
-              <div class="card-content">
-                <img src="./src/assets/images/icon-arcade.svg" alt="Icone Arcade">
-                <span>Arcade</span>
-                <p>$9/mo</p>
-              </div>
-            </label>
+            <div class="header">
+              <h2>Select your plan</h2>
+              <p>You have the option of monthly or yearly billing.</p>
+            </div>
 
-            <label class="card">
-              <input type="radio" name="plan" value="advanced">
-              <div class="card-content">
-                <img src="./src/assets/images/icon-advanced.svg" alt="Icone Advanced">
-                <span>Advanced</span>
-                <p>$12/mo</p>
-              </div>
-            </label>
+            <div class="plans">
+              <label class="card">
+                <input type="radio" name="plan" value="arcade" checked>
+                <div class="card-content">
+                  <img src="./src/assets/images/icon-arcade.svg" alt="Icone Arcade">
+                  <div class="plan-price">
+                    <p>Arcade</p>
+                    <span>$9/mo</span>
+                  </div>
+                </div>
+              </label>
 
-            <label class="card">
-              <input type="radio" name="plan" value="pro">
-              <div class="card-content">
-                <img src="./src/assets/images/icon-pro.svg" alt="Icone Pro">
-                <span>Pro</span>
-                <p>$15/mo</p>
-              </div>
-            </label>
+              <label class="card">
+                <input type="radio" name="plan" value="advanced">
+                <div class="card-content">
+                  <img src="./src/assets/images/icon-advanced.svg" alt="Icone Advanced">
+                  <div class="plan-price">
+                    <p>Advanced</p>
+                    <span>$12/mo</span>
+                  </div>
+                </div>
+              </label>
+
+              <label class="card">
+                <input type="radio" name="plan" value="pro">
+                <div class="card-content">
+                  <img src="./src/assets/images/icon-pro.svg" alt="Icone Pro">
+                  <div class="plan-price">
+                    <p>Pro</p>
+                    <span>$15/mo</span>
+                  </div>
+                </div>
+              </label>
+
+            </div>
 
             <label class="btn-toggle">
               <span>Monthly</span>
@@ -193,15 +164,17 @@
               <span>Yearly</span>
             </label>
 
-            <button type="submit" class="btn-back">Go back</button>
-            <button type="submit" class="btn-next">Next step</button>
 
+            <div class="btns">
+              <button type="submit" class="btn-back">Go back</button>
+              <button type="submit" class="btn-next">Next step</button>
+            </div>
           </fieldset>
         </form>
         <!-- Step2 end -->
 
         <!-- Step3 start -->
-        <form class="form">
+        <form class="form ativo">
           <fieldset>
             <h2>Pick add-ons</h2>
             <p>Add-ons help enhance your gaming experience.</p>
