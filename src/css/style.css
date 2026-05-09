@@ -1,3 +1,11 @@
+
+:root {
+    --color-title: hsl(213, 96%, 18%);
+    --color-subtitle: hsl(231, 11%, 63%);
+
+}
+
+
 body {
     font-family: "Ubuntu", sans-serif;
     background-color: hsl(218, 100%, 97%);
@@ -98,6 +106,19 @@ a .step-title {
     font-weight: 500;
 }
 
+.header h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color-title);
+    margin-bottom: 12px;
+}
+
+.header p {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--color-subtitle);
+}
+
 /* STEP 1 */
 
 .forms {
@@ -125,19 +146,6 @@ a .step-title {
     gap: 40px;
 }
 
-.header h2 {
-    font-size: 32px;
-    font-weight: 700;
-    color: hsl(213, 96%, 18%);
-    margin-bottom: 12px;
-}
-
-.header p {
-    font-size: 16px;
-    font-weight: 400;
-    color: hsl(231, 11%, 63%);
-}
-
 .personal-info {
     width: 95%;
 }
@@ -149,7 +157,6 @@ a .step-title {
     gap: 15px;
     width: 100%;
 }
-
 
 .personal-info .infos .form-group {
     display: flex;
@@ -242,8 +249,6 @@ a .step-title {
     color: hsl(243, 100%, 62%);
 }
 
-
-
 fieldset {
     border: none;
     padding: 0;
@@ -255,6 +260,16 @@ fieldset {
 
 fieldset button {
     align-self: flex-end;
+}
+
+
+.personal-info .btns {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-self: flex-end;
+    padding-top: 30px;
+    margin-bottom: 15px;
 }
 
 /* STEP 2 */
@@ -302,9 +317,6 @@ fieldset button {
     font-weight: 400;
     color:hsl(231, 11%, 63%);
 }
-
-
-
 
 input[type="radio"] {
     display: none;
@@ -364,6 +376,210 @@ label.btn-toggle input[type="checkbox"]:checked::before {
 .btns {
     display: flex;
     justify-content: space-between;
-   
     padding-top: 65px;
 }
+
+/* STEP 3 */
+.pick-add-ons {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 90%;
+}
+
+.addon-card {
+    display: flex;
+    align-items: center;
+    border: 1.5px solid hsl(231, 11%, 63%);
+    border-radius: 8px;
+    padding: 0 22px 0 0;
+    margin-bottom: 16px;
+    background: #fff;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+    gap: 0;
+    position: relative;
+    min-height: 72px;
+    justify-content: space-between;
+}
+
+.addon-card:last-of-type {
+    margin-bottom: 0;
+}
+
+.addon-card input[type="checkbox"] {
+    accent-color: #483eff;
+    width: 20px;
+    height: 20px;
+    margin-right: 18px;
+    min-width: 20px;
+    min-height: 20px;
+    margin-left: 0;
+}
+
+.addon-card input[type="checkbox"]:checked ~ .addon-content {
+    /* Para garantir que o conteúdo do cartão também pode ser estilizado se necessário */
+}
+
+.addon-card input[type="checkbox"]:checked + .addon-content,
+.addon-card:has(input[type="checkbox"]:checked) {
+    border-color: #483eff;
+    background: #f0f6ff;
+}
+
+.addon-content {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+    
+}
+
+.addon-content > input[type="checkbox"] {
+    margin-right: 18px;
+    margin-left: 18px;
+}
+
+.addon-content > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+}
+
+.ons-price {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.addon-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: hsl(213, 96%, 18%);
+    margin-bottom: 2px;
+    display: block;
+    line-height: 1.1;
+}
+
+.addon-desc {
+    font-size: 0.95rem;
+    color: hsl(231, 11%, 63%);
+    margin: 0;
+    line-height: 1.1;
+}
+
+.addon-price {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #483eff;
+    white-space: nowrap;
+    margin-left: 12px;
+}
+
+/* Corrige o espaçamento dos botões no STEP 3 */
+.pick-add-ons .btns {
+    padding-top: 30px;
+}
+
+/* STEP 4 */
+.summary {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 95%;
+}
+
+.summary-box {
+    width: 100%;
+    background: #f8f9fe;
+    border-radius: 12px;
+    padding: 32px 28px 24px 28px;
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.01);
+}   
+
+.summary-plan {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+.summary-plan p {
+    font-size: 1rem;
+    color: var(--color-title);
+    font-weight: 500;
+}
+.summary-plan a {
+    color: var(--color-subtitle);
+    font-size: 0.95rem;
+    text-decoration: underline;
+    margin-left: 2px;
+    font-weight: 400;
+    transition: color 0.2s;
+}
+.summary-plan a:hover {
+    color: #483eff;
+}
+.summary-plan .price {
+    font-weight: 700;
+    color: var(--color-title);
+    font-size: 1.1rem;
+}
+
+.summary-box hr {
+    border: none;
+    border-top: 1px solid #e4e6f8;
+}
+
+.summary-addons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px;
+}
+.summary-addons .addon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    color: var(--color-subtitle);
+    padding: 0 0 0 2px;
+}
+.summary-addons .addon span:last-child {
+    color: var(--color-title);
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.summary-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 18px;
+    padding: 0 28px;
+}
+.summary-total span {
+    color: var(--color-subtitle);
+    font-size: 1rem;
+}
+.summary-total strong {
+    color: #483eff;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.summary-final .btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 40px;
+    width: 100%;
+}
+
+
+
+

@@ -73,7 +73,7 @@
 
       <div class="forms">
         <!-- Step1 start -->
-        <form class="form">
+        <form class="form ">
           <fieldset class="personal-info">
 
             <div class="header">
@@ -108,14 +108,16 @@
               </div>
             </div>
 
-            <button type="submit" class="btn-next">Next Step</button>
+            <div class="btns">
+              <button type="submit" class="btn-next">Next step</button>
+            </div>
           </fieldset>
         </form>
         <!-- Step1 end -->
 
         <!-- Step2 start -->
         <form class="form ">
-          <fieldset>
+          <fieldset class="select-plan">
 
             <div class="header">
               <h2>Select your plan</h2>
@@ -174,106 +176,124 @@
         <!-- Step2 end -->
 
         <!-- Step3 start -->
-        <form class="form ativo">
-          <fieldset>
-            <h2>Pick add-ons</h2>
-            <p>Add-ons help enhance your gaming experience.</p>
+        <form class="form ">
+          <fieldset class="pick-add-ons">
 
+            <div class="header">
+              <h2>Pick add-ons</h2>
+              <p>Add-ons help enhance your gaming experience.</p>
+            </div>
+
+            <!-- Add-on 1 -->
             <label class="addon-card">
-              <input type="checkbox" name="addons" value="online-service">
-
               <div class="addon-content">
+                <input type="checkbox" name="addons" value="Online service">
                 <div>
                   <span class="addon-title">Online service</span>
                   <p class="addon-desc">Access to multiplayer games</p>
                 </div>
+              </div>
 
+              <div class="ons-price">
                 <span class="addon-price">+$1/mo</span>
               </div>
             </label>
 
+
             <!-- Add-on 2 -->
             <label class="addon-card">
-              <input type="checkbox" name="addons" value="storage">
-
               <div class="addon-content">
+                <input type="checkbox" name="addons" value="Larger storage">
                 <div>
                   <span class="addon-title">Larger storage</span>
                   <p class="addon-desc">Extra 1TB of cloud save</p>
                 </div>
-
+              </div>
+              <div class="ons-price">
                 <span class="addon-price">+$2/mo</span>
               </div>
             </label>
 
+
             <!-- Add-on 3 -->
             <label class="addon-card">
-              <input type="checkbox" name="addons" value="profile">
-
               <div class="addon-content">
+                <input type="checkbox" name="addons" value="Customizable profile">
                 <div>
                   <span class="addon-title">Customizable profile</span>
                   <p class="addon-desc">Custom theme on your profile</p>
                 </div>
-
+              </div>
+              <div class="ons-price">
                 <span class="addon-price">+$2/mo</span>
               </div>
             </label>
 
-            <button type="submit" class="btn-back">Go back</button>
-            <button type="submit" class="btn-next">Next step</button>
+            <div class="btns">
+              <button type="submit" class="btn-back">Go back</button>
+              <button type="submit" class="btn-next">Next step</button>
+            </div>
 
           </fieldset>
         </form>
         <!-- Step3 end -->
 
         <!-- Step4 start -->
-        <form class="form summary">
+        <form class="form ativo">
+          <fieldset class="summary">
 
-          <h2>Finishing up</h2>
-          <p>Double-check everything looks OK before confirming.</p>
-
-          <div class="summary-box">
-
-            <!-- Plano -->
-            <div class="summary-plan">
-              <div>
-                <strong>Arcade (Monthly)</strong>
-                <a href="#">Change</a>
-              </div>
-
-              <span class="price">$9/mo</span>
+            <div class="header">
+              <h2>Finishing up</h2>
+              <p>Double-check everything looks OK before confirming.</p>
             </div>
 
-            <hr>
+            <div class="summary-box">
 
-            <!-- Add-ons -->
-            <div class="summary-addons">
-              <div class="addon">
-                <span>Online service</span>
-                <span>+$1/mo</span>
+              <!-- Plano -->
+              <div class="summary-plan">
+                <div>
+                  <p>Arcade (Monthly)</p>
+                  <a href="#">Changer</a>
+                </div>
+
+                <span class="price">$9/mo</span>
               </div>
 
-              <div class="addon">
-                <span>Larger storage</span>
-                <span>+$2/mo</span>
+              <hr>
+
+              <!-- Add-ons -->
+              <div class="summary-addons">
+                <div class="addon">
+                  <span>Online service</span>
+                  <span>+$1/mo</span>
+                </div>
+
+                <div class="addon">
+                  <span>Larger storage</span>
+                  <span>+$2/mo</span>
+                </div>
               </div>
+
             </div>
 
-          </div>
+            <!-- Total -->
+            <div class="summary-total">
+              <span>Total (per month)</span>
+              <strong>+$12/mo</strong>
+            </div>
 
-          <!-- Total -->
-          <div class="summary-total">
-            <span>Total (per month)</span>
-            <strong>+$12/mo</strong>
-          </div>
+            <div class="btns">
+              <button class="btn-back">Go Back</button>
+              <button class="btn-confirm">Confirm</button>
+            </div>
 
-          <button class="btn-back">Go Back</button>
-          <button class="btn-confirm">Confirm</button>
-
+          </fieldset>
         </form>
         <!-- Step4 end -->
 
+        <!-- Step5 start -->
+
+        <!-- Step5 end -->
       </div>
     </div>
 
