@@ -580,6 +580,26 @@ label.btn-toggle input[type="checkbox"]:checked::before {
     width: 100%;
 }
 
+/* STEP */
 
+.check {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.check .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.check .header p {
+    line-height: 1.1;
+}
 
 
