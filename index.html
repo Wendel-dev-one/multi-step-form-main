@@ -34,7 +34,7 @@
           <ul class="steps">
 
             <li class="item step1">
-              <span class="step-number ">1</span>
+              <span class="step-number number-selected">1</span>
               <a href="#">
                 <span class="step-subtitle">Step 1</span>
                 <span class="step-title"><strong>Your info</strong></span>
@@ -42,7 +42,7 @@
             </li>
 
             <li class="item step2">
-              <span class="step-number number-selected">2</span>
+              <span class="step-number ">2</span>
               <a href="#">
                 <span class="step-subtitle">Step 2</span>
                 <span class="step-title"><strong>Select plan</strong></span>
@@ -73,7 +73,7 @@
 
       <div class="forms">
         <!-- Step1 start -->
-        <form class="form ">
+        <form id="form-personal-info" class="form ativo">
           <fieldset class="personal-info">
 
             <div class="header">
@@ -116,7 +116,7 @@
         <!-- Step1 end -->
 
         <!-- Step2 start -->
-        <form class="form ">
+        <form id="form-select-plan" class="form ">
           <fieldset class="select-plan">
 
             <div class="header">
@@ -132,6 +132,7 @@
                   <div class="plan-price">
                     <p>Arcade</p>
                     <span>$9/mo</span>
+                    <span class="plan-free"></span>
                   </div>
                 </div>
               </label>
@@ -143,6 +144,7 @@
                   <div class="plan-price">
                     <p>Advanced</p>
                     <span>$12/mo</span>
+                    <span class="plan-free"></span>
                   </div>
                 </div>
               </label>
@@ -154,6 +156,7 @@
                   <div class="plan-price">
                     <p>Pro</p>
                     <span>$15/mo</span>
+                    <span class="plan-free"></span>
                   </div>
                 </div>
               </label>
@@ -176,7 +179,7 @@
         <!-- Step2 end -->
 
         <!-- Step3 start -->
-        <form class="form ">
+        <form id="form-pick-add-ons" class="form ">
           <fieldset class="pick-add-ons">
 
             <div class="header">
@@ -239,7 +242,7 @@
         <!-- Step3 end -->
 
         <!-- Step4 start -->
-        <form class="form ">
+        <form id="form-summary" class="form ">
           <fieldset class="summary">
 
             <div class="header">
@@ -292,7 +295,7 @@
         <!-- Step4 end -->
 
         <!-- Step5 start -->
-        <form class="form ativo">
+        <form id="form-check" class="form ">
           <fieldset class="check">
             <div class="image-check">
               <img src="./src/assets/images/icon-thank-you.svg" alt="Check">
