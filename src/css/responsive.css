@@ -1,0 +1,315 @@
+@media (max-width: 450px) {
+
+    body {
+        background-color: hsl(218, 100%, 97%);
+        min-height: 100vh;
+        position: relative;
+    }
+
+    .container {
+        display: block;
+        min-height: 100vh;
+        padding: 0;
+        margin: 0;
+        max-width: 100%;
+        position: relative;
+    }
+
+    /* ── CARD ── */
+    .card-form {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 0;
+        border-radius: 0;
+        background-color: transparent;
+        max-width: 100%;
+        min-height: 100vh;
+        width: 100%;
+    }
+
+    /* ── SIDEBAR → vira header ── */
+    .sidebar {
+        background: url(../assets/images/bg-sidebar-mobile.svg) no-repeat center top / cover;
+        width: 100%;
+        min-height: 172px;
+        border-radius: 0;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        padding-top: 32px;
+    }
+
+    .steps {
+        flex-direction: row;
+        gap: 16px;
+        padding: 0;
+        margin: 0;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .item {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    /* Esconde os textos "Step N / NOME" no mobile */
+    .item a {
+        display: none;
+    }
+
+    .step-number {
+        width: 33px;
+        height: 33px;
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    /* ── FORMS WRAPPER ── */
+    .forms {
+        position: relative;
+        z-index: 10;
+        margin: -60px 16px 0;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+        flex: 1;
+        max-height: 70vh;
+    }
+
+    .forms:has(.pick-add-ons),
+    .forms:has(.summary) {
+        max-height: 55vh;
+        
+    }
+
+    .form {
+        padding: 32px 24px 24px;
+        flex-direction: column;
+    }
+
+    /* ── FIELDSETS ── */
+    fieldset {
+        gap: 24px;
+    }
+
+    /* ── HEADER ── */
+    .header h2 {
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
+
+    .header p {
+        font-size: 14px;
+    }
+
+    /* ── STEP 1 – Personal info ── */
+    .personal-info {
+        width: 100%;
+    }
+
+    .personal-info .infos {
+        gap: 12px;
+    }
+
+    .personal-info .infos .form-group {
+        margin-bottom: 0;
+    }
+
+    .form-group input {
+        font-size: 15px;
+        padding: 12px 14px;
+    }
+
+    /* Botões: ficam fora do card, no rodapé fixo */
+    .btns {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #fff;
+        padding: 16px 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;
+        box-shadow: 0 -1px 0 #e4e6f8;
+
+    }
+
+    .personal-info .btns {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 16px;
+        padding-top: 16px;
+        align-self: unset;
+        width: 100%;
+        justify-content: flex-end;
+        margin-bottom: 0;
+    }
+
+    .btn-next,
+    .btn-back,
+    .btn-confirm {
+        padding: 12px 20px;
+        font-size: 14px;
+        border-radius: 5px;
+    }
+
+    /* Garante espaço pro botão fixo não cobrir conteúdo */
+    .form {
+        padding-bottom: 88px;
+    }
+
+    /* ── STEP 2 – Select plan ── */
+    .plans {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .plans .card-content {
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        height: auto;
+        padding: 16px;
+        gap: 16px;
+    }
+
+    .plans .card-content img {
+        width: 40px;
+        height: 40px;
+        flex-shrink: 0;
+    }
+
+    .plan-price {
+        gap: 4px;
+    }
+
+    .plan-price p {
+        font-size: 0.9rem;
+    }
+
+    .plan-price span {
+        font-size: 0.8rem;
+    }
+
+    label.btn-toggle {
+        padding: 12px;
+        border-radius: 8px;
+        gap: 24px;
+    }
+
+    label.btn-toggle span {
+        font-size: 0.9rem;
+    }
+
+    .select-plan {
+        gap: 20px;
+    }
+
+    /* ── STEP 3 – Add-ons ── */
+    .pick-add-ons {
+        width: 100%;
+        gap: 16px;
+        max-height: 50vh;
+    }
+
+    .addon-card {
+        padding: 0 16px 0 0;
+        min-height: 64px;
+        margin-bottom: 0;
+    }
+
+    .addon-content>input[type="checkbox"] {
+        margin-left: 14px;
+        margin-right: 14px;
+    }
+
+    .addon-title {
+        font-size: 0.875rem;
+    }
+
+    .addon-desc {
+        font-size: 0.8rem;
+    }
+
+    .addon-price {
+        font-size: 0.875rem;
+    }
+
+    .pick-add-ons .btns {
+        padding-top: .9375rem;
+    }
+
+    /* ── STEP 4 – Summary ── */
+    .summary {
+        width: 100%;
+        gap: 20px;
+    }
+
+    .summary-box {
+        padding: 20px 16px 16px;
+        gap: 12px;
+        margin-bottom: 0;
+    }
+
+    .summary-plan p {
+        font-size: 0.9rem;
+    }
+
+    .summary-plan .price {
+        font-size: 0.9rem;
+    }
+
+    .summary-addons .addon {
+        font-size: 0.875rem;
+    }
+
+    .summary-total {
+        padding: 0 16px;
+        margin-top: 0;
+    }
+
+    .summary-total span {
+        font-size: 0.875rem;
+    }
+
+    .summary-total strong {
+        font-size: 1.1rem;
+    }
+
+    .summary .btns {
+        padding-top: .9375rem;
+    }
+
+    /* ── STEP 5 – Thank you ── */
+    .check {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 40px 0 0;
+        gap: 16px;
+    }
+
+    .check .header {
+        text-align: center;
+        margin-top: 8px;
+    }
+
+    .check .header p {
+        line-height: 1.5;
+        font-size: 14px;
+    }
+
+    .image-check img {
+        width: 56px;
+        height: 56px;
+    }
+
+}

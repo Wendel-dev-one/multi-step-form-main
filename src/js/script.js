@@ -26,10 +26,10 @@ function validateInput(input) {
 }
 
 // --- ETAPA 1: Validação dos campos pessoais ---
-const inputs1 = form1.querySelectorAll('input[required]');
+const inputs = form1.querySelectorAll('input[required]');
 const btnNext1 = form1.querySelector('.btn-next');
 
-inputs1.forEach(input => {
+inputs.forEach(input => {
     input.addEventListener('input', () => {
         if (input.value.trim() !== '') {
             const formGroup = input.closest('.form-group');
@@ -44,7 +44,7 @@ inputs1.forEach(input => {
 btnNext1.addEventListener('click', (e) => {
     e.preventDefault();
     let isValid = true;
-    inputs1.forEach(input => {
+    inputs.forEach(input => {
         if (!validateInput(input)) {
             isValid = false;
         }
@@ -245,3 +245,45 @@ btnConfirm.addEventListener('click', (e) => {
     form5.classList.add('ativo');
 });
 
+// --- Lógica do menu lateral: destaca etapa ativa ---
+const menuSteps = [
+    document.querySelector('.step1 .step-number'),
+    document.querySelector('.step2 .step-number'),
+    document.querySelector('.step3 .step-number'),
+    document.querySelector('.step4 .step-number')
+];
+
+function setMenuStepActive(stepIndex) {
+    menuSteps.forEach((el, idx) => {
+        if (el) {
+            if (idx === stepIndex) {
+                el.classList.add('number-selected');
+            } else {
+                el.classList.remove('number-selected');
+            }
+        }
+    });
+}
+
+// Inicializa o menu na etapa 0
+setMenuStepActive(0);
+
+// Atualiza o menu ao avançar/voltar etapas
+btnNext1.addEventListener('click', function() { setMenuStepActive(1); });
+btnBack2.addEventListener('click', function() { setMenuStepActive(0); });
+btnNext2.addEventListener('click', function() { setMenuStepActive(2); });
+btnBack3.addEventListener('click', function() { setMenuStepActive(1); });
+btnNext3.addEventListener('click', function() { setMenuStepActive(3); });
+btnBack4.addEventListener('click', function() { setMenuStepActive(2); });
+btnConfirm.addEventListener('click', function() { setMenuStepActive(-1); });
+
+// Manipula o clique no link 'Change' para voltar ao select-plan
+const change = document.querySelector('.link-change');
+
+change.addEventListener('click', () => {
+
+    form4.classList.remove('ativo');
+    form2.classList.add('ativo');
+
+    setMenuStepActive(1);
+});
